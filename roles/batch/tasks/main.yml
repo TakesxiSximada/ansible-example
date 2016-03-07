@@ -1,0 +1,6 @@
+- name: crontab encoding variable
+  cronvar: name="PYTHONIOENCODING" value="utf8" user="alice"
+- name: crontab encoding variable
+  cronvar: name="DJANGO_SETTINGS_MODULE" value="foo_settings" user="alice"
+- name: register batch command
+  cron: name="test command" minute="0,10,20,30,40,50" state=present job="cd /srv/foo/bar/src && cron-exec /srv/foo/bar/env/bin/python manage.py batch_command 2>&1 >> /srv/foo/bar/log/batch_command.log"

@@ -1,0 +1,10 @@
+- hosts: webservers
+  become: yes
+  become_user: alice
+  roles:
+    - nginx
+- hosts: batchservers
+  become: yes
+  become_user: alice
+  roles:
+    - batch
